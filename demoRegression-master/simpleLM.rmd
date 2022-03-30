@@ -34,3 +34,78 @@ predict(simp,new,se.fit=TRUE)
 ```
 ## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
 
+```{r}
+simp <- lm(LENGTH~CHEST,data=bears)
+plot(LENGTH~CHEST,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+According to the higher adjusted r-squared value, chest seems to be better than neck.
+
+```{r}
+simp <- lm(LENGTH~WEIGHT,data=bears)
+plot(LENGTH~WEIGHT,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+Weight seems to be worse than neck, because the adjusted r-squared value is lower than neck's.
+
+```{r}
+simp <- lm(LENGTH~AGE,data=bears)
+plot(LENGTH~AGE,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+Age seems to be worse out of these so far, because it has the lowest adjusted r squared value.
+
+```{r}
+simp <- lm(LENGTH~MONTH,data=bears)
+plot(LENGTH~MONTH,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+Month now seems to be the lowest adjusted r-sqaured value, since it is in the negative value.
+
+```{r}
+simp <- lm(LENGTH~SEX,data=bears)
+plot(LENGTH~SEX,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+Sex now seems to be the worst since it is even more negative and way lower than neck.
+
+```{r}
+simp <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+Headlength seems to be the best so far, since its value is higher than neck's.
+
+```{r}
+simp <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+Headwidth seems to not be as good as neck, but it is not the worst.
+
+
+
+In order of best to worst: HEADLEN > CHEST >
+WEIGHT > HEADWTH > AGE > MONTH > SEX
+
+Neck has an adjusted R-squared value of: 0.7476.
+Headlen has an adjusted R-squared value of: 0.8434.
+Chest has an adjusted R-squared value of: 0.7869.
+Weight has an adjusted R-squared value of: 0.7423.
+Headwidth has an adjusted R-squared value of: 0.5321.
+Age has an adjusted R-squared value of: 0.5023.
+Month has an adjusted R-squared value of: -0.01153.
+Sex has an adjusted R-squared value of: -0.0084.
+
