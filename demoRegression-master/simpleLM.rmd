@@ -41,15 +41,16 @@ abline(simp)
 summary.lm(simp)
 ```
 
-According to the higher adjusted r-squared value, chest seems to be better than neck.
-
+Chest has an adjusted R-squared value of: 0.7869. It is better than neck and is the second best fit.
 ```{r}
 simp <- lm(LENGTH~WEIGHT,data=bears)
 plot(LENGTH~WEIGHT,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
-Weight seems to be worse than neck, because the adjusted r-squared value is lower than neck's.
+
+Weight has an adjusted R-squared value of: 0.7423. 
+Weight seems to be worse than neck, although it is the third best fit.
 
 ```{r}
 simp <- lm(LENGTH~AGE,data=bears)
@@ -58,7 +59,8 @@ abline(simp)
 summary.lm(simp)
 ```
 
-Age seems to be worse out of these so far, because it has the lowest adjusted r squared value.
+Age has an adjusted R-squared value of: 0.5023.
+Age is way worse than neck but not the worst out of them all.
 
 ```{r}
 simp <- lm(LENGTH~MONTH,data=bears)
@@ -66,7 +68,9 @@ plot(LENGTH~MONTH,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
-Month now seems to be the lowest adjusted r-sqaured value, since it is in the negative value.
+
+Month has an adjusted R-squared value of: -0.01153.
+Month is almost the worst but not quite.
 
 ```{r}
 simp <- lm(LENGTH~SEX,data=bears)
@@ -75,7 +79,7 @@ abline(simp)
 summary.lm(simp)
 ```
 
-Sex now seems to be the worst since it is even more negative and way lower than neck.
+Sex has an adjusted R-squared value of: -0.0084. Out of all the variables, Sex is the worst fit because it has the lowest adjusted r-squared value.
 
 ```{r}
 simp <- lm(LENGTH~HEADLEN,data=bears)
@@ -94,7 +98,7 @@ abline(simp)
 summary.lm(simp)
 ```
 
-Headwidth seems to not be as good as neck, but it is not the worst.
+Headwidth has an adjusted R-squared value of: 0.5321. Headwidth seems to not be as good as neck, but it is not the worst.
 
 
 
