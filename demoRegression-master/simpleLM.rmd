@@ -84,7 +84,8 @@ abline(simp)
 summary.lm(simp)
 ```
 
-Headlength seems to be the best so far, since its value is higher than neck's.
+Headlen has an adjusted R-squared value of: 0.8434.
+Headlength is the best fit.
 
 ```{r}
 simp <- lm(LENGTH~HEADWTH,data=bears)
